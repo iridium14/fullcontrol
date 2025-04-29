@@ -7,7 +7,7 @@ def set_up(user_overrides: dict):
     '''
 
     # overrides for this specific printer relative those defined in base_settings.py
-    printer_overrides = {'primer': 'travel', 'nozzle_temp':0, 'bed_temp':0, 'fan_percent':0, 'relative_e':False}
+    printer_overrides = {'primer': 'travel', 'nozzle_temp':0, 'bed_temp':0, 'fan_percent':0, 'dia_feed':1.5}
     # update default initialization settings with printer-specific overrides and user-defined overrides
     initialization_data = {**base_settings.default_initial_settings, **printer_overrides}
     initialization_data = {**initialization_data, **user_overrides}
@@ -20,7 +20,6 @@ def set_up(user_overrides: dict):
     starting_procedure_steps.append(Hotend(temp=0, wait=False))
     starting_procedure_steps.append(PrinterCommand(id='absolute_coords'))
     starting_procedure_steps.append(PrinterCommand(id='units_mm'))
-    starting_procedure_steps.append(Extruder(relative_gcode=False, units='mm'))
     starting_procedure_steps.append(Fan(speed_percent=0))
     starting_procedure_steps.append(ManualGcode(text='; Allow cold extrusion\n M302 P1'))
     starting_procedure_steps.append(ManualGcode(text='; Set Extruder value to zero\n G92 E0'))
