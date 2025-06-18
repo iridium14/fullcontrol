@@ -15,7 +15,7 @@ def set_up(user_overrides: dict):
     starting_procedure_steps = []
     starting_procedure_steps.append(ManualGcode(
         text='\n;FLAVOR:Marlin\n;TIME:0\n;Filament used: 0m\n;Layer height: 0\n;MINX:0\n;MINY:0\n;MINZ:0'))
-    starting_procedure_steps.append(ManualGcode(text=';MAXX:350\n;MAXY:350\n;MAXZ:400\n'))
+    starting_procedure_steps.append(ManualGcode(text=';MAXX:220\n;MAXY:220\n;MAXZ:300\n'))
     starting_procedure_steps.append(ManualGcode(
         text='; Time to print!!!!!\n; GCode created with FullControl - tell us what you\'re printing!\n; info@fullcontrol.xyz or tag FullControlXYZ on Twitter/Instagram/LinkedIn/Reddit/TikTok \n'))
     starting_procedure_steps.append(PrinterCommand(id='home'))
