@@ -7,7 +7,7 @@ def set_up(user_overrides: dict):
     '''
 
     # overrides for this specific printer relative those defined in base_settings.py
-    printer_overrides = {'nozzle_temp':0, 'bed_temp':0, 'fan_percent':0, 'dia_feed':1.5}
+    printer_overrides = {'nozzle_temp':0, 'bed_temp':0, 'fan_percent':0, 'manual_e_ratio': 0.25}
     # update default initialization settings with printer-specific overrides and user-defined overrides
     initialization_data = {**base_settings.default_initial_settings, **printer_overrides}
     initialization_data = {**initialization_data, **user_overrides}
